@@ -32,8 +32,6 @@
         for (i = 0; i < dragged.length;) {
             el = dragged[i++];
             el = el.container || el;
-            // console.log('el', el);
-
             for (n = 0; n < mousedown['length']; ++n) {
                 el[removeEventListener](mousedown[n], el.md, 0);
             }
@@ -49,13 +47,10 @@
         dragged = _document.querySelectorAll(selector);
         for (i = 0; i < dragged.length;) {
             (function (el, lastClientX, lastClientY, pushed, scroller, cont) {
-                console.log('cont', cont);
-
                 for (n = 0; n < mousedown['length']; ++n) {
                     (cont = el.container || el)[addEventListener](mousedown[n],
                         cont.md = function (e) {
-                            console.log('e', e);
-                            console.log('el', el);
+                            // console.log('e', e);
 
                             var isTouch = (e['type'].indexOf('touch') !== -1);
                             var pageX = isTouch ? e.touches[0]['pageX'] : e['pageX'];
@@ -91,7 +86,7 @@
                     _window[addEventListener](mousemove[n],
                         cont.mm = function (e) {
                             if (pushed) {
-                                console.log('e', e);
+                                // console.log('e', e);
 
                                 var isTouch = (e['type'].indexOf('touch') !== -1);
                                 var clientX = isTouch ? e.touches[0]['clientX'] : e['clientX'];
@@ -111,8 +106,7 @@
                 }
             })(dragged[i++]);
         }
-    }
-
+    };
 
     if (_document.readyState == 'complete') {
         reset();
