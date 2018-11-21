@@ -11,9 +11,7 @@ is written in vanilla JavaScript (which means it works anywhere).
 ### Usage
 
 
-Download the and unpack
-[distribution](https://github.com/asvd/dragscroll/releases/download/v0.0.8/dragscroll-0.0.8.tar.gz),
-or install it using [Bower](http://bower.io/):
+Install it using [Bower](http://bower.io/):
 
 ```sh
 $ bower install dragscroll
@@ -34,19 +32,19 @@ Load the `dragscroll.js` in a preferable way (that is an UMD module):
 Add the `dragscroll` class to a scrollable element:
 
 ```html
-<div class=dragscroll>
+<div class="js-dragscroll">
     Big text goes here...
 </div>
 ```
 
 That's it! Now you can scroll it by dragging. You can also add the
-`dragscroll` class to the `<body>` element and drag the whole page.
+`js-dragscroll` class to the `<body>` element and drag the whole page.
 
 Keep in mind that now it is not possible to select the content with
 mouse, so apply the `cursor: default;` CSS style to prevent confusing
 the users (or even `cursor: grab;` in case the content is not a text).
 
-If you add or remove the `dragscroll` class dynamically, invoke
+If you add or remove the `js-dragscroll` class dynamically, invoke
 `dragscroll.reset()` to update the listeners.
 
 You can also add the `nochilddrag` attribute to a scrollable element,
